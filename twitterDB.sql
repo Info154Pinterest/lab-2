@@ -1,0 +1,25 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+CREATE SCHEMA IF NOT EXISTS `twitter` DEFAULT CHARACTER SET latin1 ;
+-- CREATE SCHEMA IF NOT EXISTS `twitter` DEFAULT CHARACTER SET utf8_general_ci;
+
+USE `twitter` ;
+
+-- -----------------------------------------------------
+-- Table `twitter`.`results`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `twitter`.`results` (
+  `search` VARCHAR(500) NOT NULL,
+  `id_str` VARCHAR(45) NOT NULL,
+  `created_at` VARCHAR(45) NULL DEFAULT NULL,
+  `textf` VARCHAR(1000) NULL DEFAULT NULL,
+  `user_id` VARCHAR(45) NULL DEFAULT NULL,
+  `last_update` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `location` VARCHAR(200) NULL DEFAULT NULL,
+  PRIMARY KEY (`id_str`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
